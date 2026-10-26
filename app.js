@@ -109,7 +109,7 @@ function update(){
     const r=estimate(inputs);lastResult=r;lastInputs=inputs;setError('');$('download').disabled=false;
     $('results').setAttribute('aria-label','Current daily water estimate');
     $('total-et').textContent=fmt(r.grossET,1);
-    $('total-et').style.fontSize=r.grossET>=1000000?'30px':r.grossET>=10000?'40px':'';
+    $('total-et').style.fontSize=r.grossET>=1000000?'36px':r.grossET>=10000?'48px':'';
     const stage=$('stage').value==='mature'?'Full canopy':$('stage').value==='seedling'?'Seedling':'Developing canopy';
     $('result-context').textContent=`${fmt(inputs.area,inputs.area%1?1:0)} m² · ${crops[$('crop').value].name} · ${stage}`;
     $('sensitivity-value').textContent=`${fmt(r.low,0)}–${fmt(r.high,0)} L/day`;
